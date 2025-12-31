@@ -33,12 +33,12 @@ public class Position {
      *
      * @param row A linha (0-7).
      * @param col A coluna (0-7).
-     * @return {@code Position} A instância de Posição correspondente.
-     * @throws IllegalArgumentException se as coordenadas estiverem fora do tabuleiro.
+     * @return  {@code Position} A instância de Posição correspondente,
+     *          {@code null} se as coordenadas estiverem fora do tabuleiro.
      */
     public static Position at(int row, int col) {
         if (row < 0 || row > 7 || col < 0 || col > 7) {
-            throw new IllegalArgumentException("Coordenadas fora do tabuleiro: linha = " + row + ", coluna = " + col);
+            return null;
         }
         return positions[row][col];
     }
